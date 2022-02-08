@@ -9,9 +9,10 @@ import 'package:hatching/presentation/base_app/base_app.dart';
 import 'core/logger/logger.dart';
 
 void main() async {
-  Logger.init(BaseLogger());
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await EasyLocalization.ensureInitialized();
+  Logger.init(BaseLogger());
   BlocOverrides.runZoned(
     () => runApp(const MyApp()),
     blocObserver: AppBlocObserver(),
