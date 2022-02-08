@@ -10,3 +10,7 @@ class ProjectLocales {
   static const Locale enLocale = Locale("en", "US");
   static const Locale uaLocale = Locale("ua", "UK");
 }
+
+class ProjectAnimations {
+  static const String loading = "assets/animations/loading.json";
+}

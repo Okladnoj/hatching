@@ -1,6 +1,7 @@
 {
   "app_name": "Hatching",
-  "tests": "Test",
+  "tests": "Tests",
   "analytics": "Analytics",
-  "settings": "Settings"
+  "settings": "Settings",
+  "search": "Search..."
 }

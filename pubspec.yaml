@@ -20,6 +20,7 @@ dependencies:
   flutter_svg: ^1.0.3
   equatable: ^2.0.3
   get: ^4.6.1
+  lottie: ^1.2.1
 
 dev_dependencies:
   flutter_test:
@@ -32,3 +33,4 @@ flutter:
     - assets/translations/
     - assets/images/
     - assets/images/icons/
+    - assets/animations/
