@@ -1,7 +1,15 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'test_item.cg.g.dart';
+
 class BaseTestItem {
+  @JsonKey()
   final String id;
+  @JsonKey()
   final String name;
+  @JsonKey()
   final String description;
+  @JsonKey()
   final String imageUrl;
 
   BaseTestItem({
@@ -12,8 +20,10 @@ class BaseTestItem {
   });
 }
 
+@JsonSerializable()
 class TestMultipleItems extends BaseTestItem {
-  final List<BaseTestItem> items;
+  @JsonKey()
+  final List<TestSingleItem> items;
 
   TestMultipleItems({
     required String id,
@@ -29,7 +39,9 @@ class TestMultipleItems extends BaseTestItem {
         );
 }
 
+@JsonSerializable()
 class TestSingleItem extends BaseTestItem {
+  @JsonKey()
   final String testJson;
 
   TestSingleItem({

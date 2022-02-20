@@ -61,7 +61,7 @@ class BaseApp extends StatelessWidget {
       ],
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       theme: AppThemes.getLightTheme(context),
       darkTheme: AppThemes.getDarkTheme(context),
       home: MultiBlocProvider(

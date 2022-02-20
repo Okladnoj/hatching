@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 extension AppThemes on ThemeData {
   static ThemeData getLightTheme(BuildContext context) {
     return ThemeData(
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(primary: Colors.grey[800]),
+      ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(

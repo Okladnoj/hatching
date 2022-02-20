@@ -1,5 +1,5 @@
 import 'package:hatching/data/repositories/test_repository.dart';
-import 'package:hatching/domain/test_item/test_item.dart';
+import 'package:hatching/domain/test_item/test_item.cg.dart';
 
 class MockTestsService implements BaseTestsRepository {
   @override

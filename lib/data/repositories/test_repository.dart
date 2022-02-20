@@ -1,4 +1,4 @@
-import 'package:hatching/domain/test_item/test_item.dart';
+import 'package:hatching/domain/test_item/test_item.cg.dart';
 
 abstract class BaseTestsRepository {
   Future<List<BaseTestItem>> fetchItems();

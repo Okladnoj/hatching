@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:get/get.dart';
 import 'package:hatching/data/repositories/test_repository.dart';
-import 'package:hatching/domain/test_item/test_item.dart';
+import 'package:hatching/domain/test_item/test_item.cg.dart';
 
 part 'tests_event.dart';
 

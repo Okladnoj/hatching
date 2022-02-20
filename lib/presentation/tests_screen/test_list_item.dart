@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hatching/domain/test_item/test_item.dart';
+import 'package:hatching/domain/test_item/test_item.cg.dart';
 
 class SingleTestListItem extends StatelessWidget {
   final TestSingleItem item;

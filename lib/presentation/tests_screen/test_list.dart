@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hatching/core/blocs/tests_bloc/tests_bloc.dart';
-import 'package:hatching/domain/test_item/test_item.dart';
+import 'package:hatching/domain/test_item/test_item.cg.dart';
 import 'package:hatching/presentation/tests_screen/test_card_list_item.dart';
 import 'package:hatching/presentation/tests_screen/test_list_item.dart';
 
