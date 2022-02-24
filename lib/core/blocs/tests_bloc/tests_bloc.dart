@@ -11,7 +11,7 @@ part 'tests_event.dart';
 part 'tests_state.dart';
 
 class TestsBloc extends Bloc<TestsEvent, TestsState> {
-  final BaseTestsRepository _repository = Get.find<BaseTestsRepository>();
+  final TestsRepository _repository = Get.find<TestsRepository>();
 
   final List<BaseTestItem> _tests = [];
 

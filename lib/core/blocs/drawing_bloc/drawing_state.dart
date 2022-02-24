@@ -8,3 +8,31 @@ class DrawingInitial extends DrawingState {
   @override
   List<Object> get props => [];
 }
+
+class DrawingEnded extends DrawingState {
+  @override
+  List<Object?> get props => [];
+}
+
+class DrawingConfirmed extends DrawingState {
+  @override
+  List<Object?> get props => [];
+}
+
+class DrawingCanceled extends DrawingState {
+  @override
+  List<Object?> get props => [];
+}
+
+class DrawingInProgress extends DrawingState {
+  @override
+  List<Object?> get props => [];
+}
+
+class DrawingFailure extends DrawingState {
+  final String reason;
+
+  const DrawingFailure(this.reason);
+  @override
+  List<Object?> get props => [reason];
+}

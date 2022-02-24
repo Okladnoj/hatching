@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hatching/domain/test_item/test_item.cg.dart';
+import 'package:hatching/utils/fonts.dart';
+import 'package:hatching/utils/resourses.dart';
+import 'package:lottie/lottie.dart';
 
 class SingleTestListItem extends StatelessWidget {
   final TestSingleItem item;
@@ -28,6 +31,17 @@ class SingleTestListItem extends StatelessWidget {
                   child: Image.network(
                     item.imageUrl,
                     height: 60,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      } else {
+                        return SizedBox(
+                          height: 60,
+                          width: 60,
+                          child: Lottie.asset(AppAnimations.loading),
+                        );
+                      }
+                    },
                   ),
                 ),
                 Container(
@@ -39,11 +53,11 @@ class SingleTestListItem extends StatelessWidget {
                     children: [
                       Text(
                         item.name,
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: AppFonts.textMedium(fontWeight: FontWeight.w700),
                       ),
                       Text(
                         item.description,
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: AppFonts.textMedium(fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),

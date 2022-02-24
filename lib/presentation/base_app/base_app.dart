@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:hatching/core/blocs/app_bloc/app_bloc.dart';
+import 'package:hatching/core/repositories/analytics_repository/mock_analytics_service.dart';
 import 'package:hatching/core/repositories/test_repository/mock_test_service.dart';
+import 'package:hatching/data/repositories/analytics_repository.dart';
 import 'package:hatching/data/repositories/test_repository.dart';
 import 'package:hatching/presentation/main_screen/main_screen.dart';
 import 'package:hatching/utils/resourses.dart';
@@ -27,20 +29,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return EasyLocalization(
-      supportedLocales: const [
-        ProjectLocales.enLocale,
-        ProjectLocales.uaLocale
-      ],
+      supportedLocales: const [AppLocales.enLocale, AppLocales.uaLocale],
       path: 'assets/translations',
       useOnlyLangCode: true,
-      fallbackLocale: ProjectLocales.enLocale,
-      startLocale: ProjectLocales.enLocale,
+      fallbackLocale: AppLocales.enLocale,
+      startLocale: AppLocales.enLocale,
       child: const BaseApp(),
     );
   }
 
   void _initDependencies() {
-    Get.put<BaseTestsRepository>(MockTestsService());
+    Get.put<TestsRepository>(MockTestsService());
+    Get.put<AnalyticsRepository>(MockAnalyticsService());
   }
 }
 

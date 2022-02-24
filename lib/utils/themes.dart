@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hatching/utils/fonts.dart';
 
 extension AppThemes on ThemeData {
   static ThemeData getLightTheme(BuildContext context) {
@@ -28,8 +29,8 @@ extension AppThemes on ThemeData {
           size: 25,
         ),
       ),
-      textTheme:
-          Theme.of(context).textTheme.apply(decorationColor: Colors.black),
+      textTheme: Theme.of(context).textTheme.apply(
+          decorationColor: Colors.black, fontFamily: AppFonts.fontFamily),
       brightness: Brightness.light,
     );
   }

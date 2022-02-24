@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hatching/domain/test_item/test_item.cg.dart';
 import 'package:hatching/presentation/tests_screen/test_list_item.dart';
 import 'package:hatching/presentation/tests_screen/test_list_trailing.dart';
+import 'package:hatching/utils/fonts.dart';
 
 class TestCardItem extends StatefulWidget {
   final TestMultipleItems item;
@@ -35,11 +36,11 @@ class _TestCardItemState extends State<TestCardItem> {
           ),
           title: Text(
             widget.item.name,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: AppFonts.textMedium(fontWeight: FontWeight.w700),
           ),
           subtitle: Text(
             widget.item.description,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: AppFonts.textMedium(fontWeight: FontWeight.w500),
           ),
           children: widget.item.items
               .cast<TestSingleItem>()

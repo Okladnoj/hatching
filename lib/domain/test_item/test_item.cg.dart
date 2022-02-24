@@ -37,6 +37,9 @@ class TestMultipleItems extends BaseTestItem {
           imageUrl: imageUrl,
           name: name,
         );
+
+  static TestMultipleItems fromJson(Map<String, dynamic> json) =>
+      _$TestMultipleItemsFromJson(json);
 }
 
 @JsonSerializable()
@@ -56,4 +59,7 @@ class TestSingleItem extends BaseTestItem {
           imageUrl: imageUrl,
           name: name,
         );
+
+  static TestSingleItem fromJson(Map<String, dynamic> json) =>
+      _$TestSingleItemFromJson(json);
 }
