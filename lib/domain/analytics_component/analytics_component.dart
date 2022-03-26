@@ -15,6 +15,6 @@ class AnalyticsComponent {
   }
 
   AnalyticsItem performAnalytics() {
-    return AnalyticsItem("1");
+    return AnalyticsItem("1", "Test 1", "Test 1 desc");
   }
 }

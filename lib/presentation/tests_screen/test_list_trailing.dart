@@ -49,6 +49,7 @@ class _TestCardTrailingState extends State<TestCardTrailing>
       child: Stack(
         fit: StackFit.loose,
         children: [
+          if(widget.itemsCount>0)
           Container(
             height: 24,
             width: 24,

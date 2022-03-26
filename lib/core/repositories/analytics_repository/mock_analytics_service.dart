@@ -6,17 +6,17 @@ class MockAnalyticsService implements AnalyticsRepository {
   Future<List<AnalyticsItem>> fetchAnalytics() async {
     await Future.delayed(const Duration(seconds: 2));
     return [
-      AnalyticsItem("1"),
-      AnalyticsItem("2"),
-      AnalyticsItem("3"),
-      AnalyticsItem("4"),
+      AnalyticsItem("1", "Test 1", "Test 1 desc"),
+      AnalyticsItem("2", "Test 2", "Test 2 desc"),
+      AnalyticsItem("3", "Test 3", "Test 3 desc"),
+      AnalyticsItem("4", "Test 4", "Test 4 desc"),
     ];
   }
 
   @override
   Future<AnalyticsItem> fetchAnalyticsDetails(String id) async {
     await Future.delayed(const Duration(seconds: 2));
-    return AnalyticsItem(id);
+    return AnalyticsItem(id, "Test 1", "Test 1 desc");
   }
 
   @override

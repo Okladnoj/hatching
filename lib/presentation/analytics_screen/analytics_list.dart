@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hatching/domain/analytics_item/analytics_item.cg.dart';
+import 'package:hatching/presentation/analytics_screen/analytics_list_item.dart';
 
 class AnalyticsList extends StatelessWidget {
   final List<AnalyticsItem> items;
@@ -10,7 +11,9 @@ class AnalyticsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, i) {
-        return Text(items[i].toString());
+        return AnalyticsListItem(
+          item: items[i],
+        );
       },
       itemCount: items.length,
     );

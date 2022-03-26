@@ -6,6 +6,10 @@ part 'analytics_item.cg.g.dart';
 class AnalyticsItem {
   @JsonKey()
   final String id;
+  @JsonKey()
+  final String name;
+  @JsonKey()
+  final String description;
 
-  AnalyticsItem(this.id);
+  AnalyticsItem(this.id, this.name, this.description);
 }

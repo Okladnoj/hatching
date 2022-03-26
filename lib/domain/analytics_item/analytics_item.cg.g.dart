@@ -6,12 +6,16 @@ part of 'analytics_item.cg.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AnalyticsItem _$AnalyticsReportFromJson(Map<String, dynamic> json) =>
+AnalyticsItem _$AnalyticsItemFromJson(Map<String, dynamic> json) =>
     AnalyticsItem(
       json['id'] as String,
+      json['name'] as String,
+      json['description'] as String,
     );
 
-Map<String, dynamic> _$AnalyticsReportToJson(AnalyticsItem instance) =>
+Map<String, dynamic> _$AnalyticsItemToJson(AnalyticsItem instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
     };
