@@ -16,33 +16,29 @@ class _DrawingCanvasState extends State<DrawingCanvas> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: double.infinity,
-      child: BlocListener<DrawingCubit, DrawingState>(
-        listener: (context, state) {
-          _canDraw = state is DrawingInitial;
-          if (state is DrawingInitial) {
-            _points.clear();
-          }
+    return BlocListener<DrawingCubit, DrawingState>(
+      listener: (context, state) {
+        _canDraw = state is DrawingInitial;
+        if (state is DrawingInitial) {
+          _points.clear();
+        }
+      },
+      child: GestureDetector(
+        onPanUpdate: (DragUpdateDetails details) {
+          if (!_canDraw) return;
+          setState(() => _points.add(details.localPosition));
         },
-        child: GestureDetector(
-          onPanUpdate: (DragUpdateDetails details) {
-            if (!_canDraw) return;
-            setState(() => _points.add(details.localPosition));
-          },
-          onPanEnd: (details) {
-            if (!_canDraw) return;
-            BlocProvider.of<DrawingCubit>(context).endDrawing(
-                _points.map((e) => FigurePoint.fromOffset(e)).toList());
-          },
-          child: CustomPaint(
-            key: GlobalKey(),
-            isComplex: true,
-            willChange: true,
-            painter: Signature(points: _points),
-            size: Size.infinite,
-          ),
+        onPanEnd: (details) {
+          if (!_canDraw) return;
+          BlocProvider.of<DrawingCubit>(context).endDrawing(
+              _points.map((e) => FigurePoint.fromOffset(e)).toList());
+        },
+        child: CustomPaint(
+          key: GlobalKey(),
+          isComplex: true,
+          willChange: true,
+          painter: Signature(points: _points),
+          size: Size.infinite,
         ),
       ),
     );

@@ -148,5 +148,5 @@ class AppFonts {
     );
   }
 
-  static Color? _toColor(Color? color) => color ?? Colors.grey[800];
+  static Color? _toColor(Color? color) => color ?? Colors.grey[900];
 }

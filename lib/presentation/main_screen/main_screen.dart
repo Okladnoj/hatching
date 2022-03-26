@@ -145,6 +145,5 @@ class MainScreen extends StatelessWidget {
     BlocProvider.of<AppBloc>(context).add(
       AppSwitchToScreen(AppScreenExtension.fromIndex(screen)),
     );
-    Logger.m(screen.toString());
   }
 }

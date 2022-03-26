@@ -15,8 +15,12 @@ class DrawingEnded extends DrawingState {
 }
 
 class DrawingConfirmed extends DrawingState {
+  final AnalyticsItem item;
+
+  const DrawingConfirmed(this.item);
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [item];
 }
 
 class DrawingCanceled extends DrawingState {
@@ -33,6 +37,7 @@ class DrawingFailure extends DrawingState {
   final String reason;
 
   const DrawingFailure(this.reason);
+
   @override
   List<Object?> get props => [reason];
 }

@@ -1,9 +1,9 @@
 import 'package:hatching/domain/analytics_item/analytics_item.cg.dart';
 
 abstract class AnalyticsRepository {
-  Future<void> sendAnalytics(AnalyticsReport report);
+  Future<void> sendAnalytics(AnalyticsItem report);
 
-  Future<List<AnalyticsReport>> fetchAnalytics();
+  Future<List<AnalyticsItem>> fetchAnalytics();
 
-  Future<AnalyticsReport> fetchAnalyticsDetails(String id);
+  Future<AnalyticsItem> fetchAnalyticsDetails(String id);
 }

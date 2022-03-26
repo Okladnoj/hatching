@@ -48,8 +48,11 @@ class _TestsScreenState extends State<TestsScreen> {
             return TestList(items: state.tests);
           } else if (state is TestsLoading) {
             return Center(
-              child:
-                  Lottie.asset(AppAnimations.loading, frameRate: FrameRate(60)),
+              child: Lottie.asset(
+                AppAnimations.loading,
+                frameRate: FrameRate(60),
+                repeat: true,
+              ),
             );
           }
           return Container();

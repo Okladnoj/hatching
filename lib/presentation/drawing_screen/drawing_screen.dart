@@ -43,21 +43,6 @@ class _DrawingScreenState extends State<DrawingScreen> {
     );
   }
 
-  void _blocListener(context, DrawingState state) {
-    if (state is DrawingFailure) {
-      Logger.m(state.reason);
-    } else if (state is DrawingConfirmed) {
-      showModalBottomSheet(
-          context: context,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
-          builder: (context) =>
-              const QuickAnalyticsDecorator(child: QuickAnalyticsWidget()));
-    } else if (state is DrawingCanceled) {
-      Navigator.maybePop(context);
-    }
-  }
-
   Align _buildBottomButtons() {
     return Align(
       alignment: Alignment.bottomCenter,
@@ -76,6 +61,25 @@ class _DrawingScreenState extends State<DrawingScreen> {
         }),
       ),
     );
+  }
+
+  void _blocListener(context, DrawingState state) {
+    if (state is DrawingFailure) {
+      Logger.m(state.reason);
+    } else if (state is DrawingConfirmed) {
+      showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(15))),
+        builder: (context) => QuickAnalyticsDecorator(
+          child: QuickAnalyticsWidget(
+            analytics: state.item,
+          ),
+        ),
+      );
+    } else if (state is DrawingCanceled) {
+      Navigator.maybePop(context);
+    }
   }
 
   @override
